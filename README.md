@@ -22,7 +22,7 @@ Or build multiplatform for both amd64 and arm64:
 $ ./build.sh
 ```
 
-This builds two image tags: `mcp-postgres:latest` amd `mcp-postgres:latest-arm64`.
+This builds two image tags: `mcp-postgres:latest` and `mcp-postgres:latest-arm64`.
 
 ## Claude Desktop configuration
 
