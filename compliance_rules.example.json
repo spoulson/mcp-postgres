@@ -1,0 +1,30 @@
+{
+  "rules": [
+    {
+      "name": "customers.email must not be null",
+      "type": "not_null",
+      "table": "customers",
+      "column": "email"
+    },
+    {
+      "name": "customers.email must be a valid address",
+      "type": "regex",
+      "table": "customers",
+      "column": "email",
+      "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+    },
+    {
+      "name": "orders.amount must be positive",
+      "type": "range",
+      "table": "orders",
+      "column": "amount",
+      "min": 0
+    },
+    {
+      "name": "no orphaned order records",
+      "type": "sql",
+      "description": "Every order must reference a valid customer",
+      "sql": "SELECT o.id, o.customer_id FROM orders o WHERE NOT EXISTS (SELECT 1 FROM customers c WHERE c.id = o.customer_id)"
+    }
+  ]
+}
