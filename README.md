@@ -26,6 +26,8 @@ This builds two image tags: `mcp-postgres:latest` amd `mcp-postgres:latest-arm64
 
 ## Claude Desktop configuration
 
+Claude has an edit button at Settings -> Developer -> Edit Config button.  Add/edit the `mcpServers` stanza to add the MCP server.  Then restart Claude.
+
 ### Run native
 Build executable and run natively:
 ```json
