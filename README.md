@@ -1,4 +1,4 @@
-# MCP Server for PostgresSQL
+# MCP Server for PostgreSQL
 MCP Server for Claude to communicate with PostgreSQL databases.
 
 ## Build
