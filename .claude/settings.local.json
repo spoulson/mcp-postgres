@@ -3,7 +3,8 @@
     "allow": [
       "Bash(go get *)",
       "Bash(go mod *)",
-      "Bash(go build *)"
+      "Bash(go build *)",
+      "Read(//home/spoulson/go/pkg/mod/github.com/mark3labs/mcp-go@v0.54.1/mcp/**)"
     ]
   }
 }

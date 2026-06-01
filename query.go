@@ -27,7 +27,9 @@ func newQueryHandler(pool *pgxpool.Pool) func(context.Context, mcp.CallToolReque
 		if err != nil {
 			return nil, fmt.Errorf("begin transaction: %w", err)
 		}
-		defer tx.Rollback(ctx)
+		defer func() {
+			_ = tx.Rollback(ctx)
+		}()
 
 		rows, err := tx.Query(ctx, sql)
 		if err != nil {
