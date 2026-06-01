@@ -23,7 +23,9 @@ func newExplainHandler(pool *pgxpool.Pool) func(context.Context, mcp.CallToolReq
 		if err != nil {
 			return nil, fmt.Errorf("begin transaction: %w", err)
 		}
-		defer tx.Rollback(ctx)
+		defer func() {
+			_ = tx.Rollback(ctx)
+		}()
 
 		var explainSQL string
 		if analyze {

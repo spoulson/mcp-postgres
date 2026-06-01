@@ -18,7 +18,11 @@ Docker multi-platform (amd64 + arm64):
 ./build.sh
 ```
 
-There are no tests in this project.
+```sh
+go test -v -timeout 120s ./...
+```
+
+Tests require Docker (testcontainers-go spins up a `postgres:16-alpine` container). Run a single test with `-run TestName`.
 
 ## Architecture
 
